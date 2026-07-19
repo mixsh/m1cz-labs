@@ -1,0 +1,138 @@
+/*
+Light CSS reset:
+- box-sizing: border-box for predictable sizing
+- remove default margins
+- sensible defaults for typography and media
+- accessible focus outlines
+- respects prefers-reduced-motion
+*/
+
+:root {
+    --bg: #ffffff;
+    --fg: #0f172a;
+    --muted: #6b7280;
+    --max-width: 75rem;
+    --container-padding: 1rem;
+}
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Basic layout */
+html,
+body {
+    height: 100%;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    font-family:
+        system-ui,
+        -apple-system,
+        "Segoe UI",
+        Roboto,
+        "Helvetica Neue",
+        Arial;
+    background-color: var(--bg);
+    color: var(--fg);
+}
+
+body {
+    margin: 0;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Media and responsive elements */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Form elements inherit font */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Links and buttons */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+/* Headings & paragraphs */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 0.5rem 0;
+    line-height: 1.15;
+}
+
+p {
+    margin: 0 0 1rem 0;
+    color: var(--muted);
+}
+
+/* Container utilities */
+.container {
+    max-width: var(--max-width);
+    margin: 2rem auto;
+    padding: 0 var(--container-padding);
+    width: 100%;
+}
+
+header,
+footer {
+    padding: 1rem var(--container-padding);
+}
+
+footer {
+    margin-top: auto;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+/* Focus styles */
+:focus {
+    outline: 3px solid Highlight;
+    outline-offset: 3px;
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
+}
