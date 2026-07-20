@@ -18,6 +18,15 @@
     --max-width: 68rem;
 }
 
+/* ─── Container ───────────────────────────────────────────────────────────── */
+
+.container {
+    max-width: var(--max-width);
+    margin: 1rem auto;
+    padding: 0 1rem;
+    width: 100%;
+}
+
 /* ─── Base overrides ──────────────────────────────────────────────────────── */
 
 html {

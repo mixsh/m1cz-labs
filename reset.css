@@ -11,8 +11,6 @@ Light CSS reset:
     --bg: #ffffff;
     --fg: #0f172a;
     --muted: #6b7280;
-    --max-width: 75rem;
-    --container-padding: 1rem;
 }
 
 /* Box sizing */
@@ -98,25 +96,6 @@ h6 {
 p {
     margin: 0 0 1rem 0;
     color: var(--muted);
-}
-
-/* Container utilities */
-.container {
-    max-width: var(--max-width);
-    margin: 2rem auto;
-    padding: 0 var(--container-padding);
-    width: 100%;
-}
-
-header,
-footer {
-    padding: 1rem var(--container-padding);
-}
-
-footer {
-    margin-top: auto;
-    color: var(--muted);
-    font-size: 0.9rem;
 }
 
 /* Focus styles */
