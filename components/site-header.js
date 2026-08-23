@@ -2,7 +2,7 @@
  * <site-header> — reusable page header Web Component.
  *
  * Attributes:
- *   title  — the text shown in the <h1>. Defaults to "m1cz labs".
+ *   title  — the text shown in the <h1>
  *   back   — when present, renders a "← m1cz labs" nav link above the title.
  *
  * Examples:
@@ -11,8 +11,7 @@
  */
 class SiteHeader extends HTMLElement {
   connectedCallback() {
-    const title = this.getAttribute("title");
-    const fullTitle = title ? `m1cz labs | ${title}` : "m1cz labs";
+    const title = this.getAttribute("title") || document.title;
     const showBack = this.hasAttribute("back");
 
     const backNav = showBack
@@ -22,7 +21,7 @@ class SiteHeader extends HTMLElement {
     this.innerHTML = `
       <header class="container" role="banner">
           ${backNav}
-          <h1>${fullTitle}</h1>
+          <h1>${title}</h1>
       </header>
     `;
   }

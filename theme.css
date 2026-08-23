@@ -71,7 +71,6 @@ header h1 {
     font-size: 1rem;
     font-weight: 500;
     letter-spacing: 0.18em;
-    text-transform: lowercase;
     color: var(--accent);
     display: inline-flex;
     align-items: baseline;
@@ -89,7 +88,7 @@ header h1::before {
 header h1::after {
     content: "_";
     color: var(--accent);
-    animation: blink 1.1s step-start infinite;
+    animation: blink 3s step-start infinite;
 }
 
 @keyframes blink {
@@ -139,12 +138,17 @@ p {
     max-width: 62ch;
 }
 
+section p strong {
+    font-weight: 500;
+    color: var(--fg);
+}
+
 h2 {
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     font-weight: 500;
     letter-spacing: 0.25em;
     text-transform: uppercase;
-    color: var(--fg-muted);
+    color: var(--fg);
     margin-bottom: 1.25rem;
 }
 
@@ -160,11 +164,24 @@ h3 {
     color: var(--fg);
 }
 
+/* ─── Horizontal rule ─────────────────────────────────────────────────────── */
+
+hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 1.0rem 0;
+    max-width: 62ch;
+}
+
 /* ─── Sections ────────────────────────────────────────────────────────────── */
 
 section {
-    margin-top: 3.5rem;
+    margin-top: 3.0rem;
     padding-top: 0;
+}
+
+section:first-of-type {
+    margin-top: 1.0rem;
 }
 
 /* ─── Project list ───────────────────────────────────────────────────────── */
@@ -175,6 +192,7 @@ ul {
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
+    padding-left: 0;
 }
 
 ul li {
@@ -223,14 +241,13 @@ ul li strong::before {
 ul li p {
     margin: 0;
     font-size: 0.82rem;
-    color: var(--fg-muted);
     padding-left: 2ch;
 }
 
 /* ─── Links ───────────────────────────────────────────────────────────────── */
 
 a {
-    color: var(--fg-muted);
+    color: var(--fg);
     text-underline-offset: 3px;
     transition: color 0.15s ease;
 }
